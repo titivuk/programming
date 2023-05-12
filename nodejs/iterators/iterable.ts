@@ -34,6 +34,22 @@ class Matrix {
 
 const matrix = new Matrix();
 
+/**
+ * use builtins
+ */
 for (const item of matrix) {
   console.log(item);
 }
+
+/**
+ * get iterator
+ */
+const iterator = matrix[Symbol.iterator]();
+
+let iterationResult = iterator.next();
+while (!iterationResult.done) {
+  console.log(iterationResult.value);
+  iterationResult = iterator.next();
+}
+
+export {};

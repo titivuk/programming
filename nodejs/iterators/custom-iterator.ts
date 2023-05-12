@@ -28,3 +28,5 @@ while (!iterationResult.done) {
   console.log(iterationResult.value);
   iterationResult = iterator.next();
 }
+
+export {};
