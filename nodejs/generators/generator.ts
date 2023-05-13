@@ -13,7 +13,7 @@ const generator = generatorFn();
  */
 let iterationResult = generator.next();
 while (!iterationResult.done) {
-  console.log(iterationResult.value); // a b c
+  console.log("iterator protocol", iterationResult.value); // a b c
   iterationResult = generator.next();
 }
 
@@ -21,7 +21,7 @@ while (!iterationResult.done) {
  * generator implements iterable protocol
  */
 for (const item of generatorFn()) {
-  console.log(item); // a b c
+  console.log("iterable protocol", item); // a b c
 }
 
 export {};

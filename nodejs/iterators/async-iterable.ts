@@ -41,18 +41,18 @@ const matrix = new Matrix();
  * use builtins
  */
 for await (const item of matrix) {
-  console.log(item);
+  console.log("iterable protocol", item);
 }
 
 /**
  * get iterator
  */
-const iterator = matrix[Symbol.iterator]();
+const iterator = matrix[Symbol.asyncIterator]();
 
-let iterationResult = iterator.next();
+let iterationResult = await iterator.next();
 while (!iterationResult.done) {
-  console.log(iterationResult.value);
-  iterationResult = iterator.next();
+  console.log("iterator protocol", iterationResult.value);
+  iterationResult = await iterator.next();
 }
 
 export {};

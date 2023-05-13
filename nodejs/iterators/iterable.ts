@@ -38,7 +38,7 @@ const matrix = new Matrix();
  * use builtins
  */
 for (const item of matrix) {
-  console.log(item);
+  console.log("iterable protocol", item);
 }
 
 /**
@@ -48,7 +48,7 @@ const iterator = matrix[Symbol.iterator]();
 
 let iterationResult = iterator.next();
 while (!iterationResult.done) {
-  console.log(iterationResult.value);
+  console.log("iterator protocol", iterationResult.value);
   iterationResult = iterator.next();
 }
 
