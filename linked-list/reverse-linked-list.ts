@@ -1,4 +1,4 @@
-import { LinkedList, ListNode } from "./linked-list";
+import { LinkedList, ListNode } from "./linked-list.js";
 
 function reverseList(list: LinkedList<any>) {
   let curr = list.head;
