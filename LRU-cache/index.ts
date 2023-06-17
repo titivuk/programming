@@ -43,8 +43,6 @@ class LRUCache {
       this.deleteItemFromList(node);
       this.setListHead(node);
     } else {
-      const node = new Node(key, value);
-
       if (this.cache.size === this.capacity) {
         if (this.tail) {
           this.cache.delete(this.tail.key);
@@ -52,6 +50,8 @@ class LRUCache {
 
         this.deleteItemFromList(this.tail);
       }
+
+      const node = new Node(key, value);
 
       this.cache.set(key, node);
       this.setListHead(node);
