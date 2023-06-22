@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Current file",
+      "name": "Current TS File",
       "type": "node",
       "request": "launch",
-      "runtimeArgs": ["-r", "ts-node/register"],
+      "runtimeArgs": ["--loader", "ts-node/esm"],
       "args": ["${file}"]
     }
   ]
