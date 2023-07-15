@@ -1,4 +1,4 @@
-import { TreeNode } from "./binary-tree.js";
+import { TreeNode } from "./tree-node.js";
 
 function recursiveDfs(node: TreeNode | null) {
   if (!node) {

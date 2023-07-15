@@ -1,4 +1,4 @@
-import { TreeNode } from "./binary-tree.js";
+import { TreeNode } from "./tree-node.js";
 
 // https://leetcode.com/problems/diameter-of-binary-tree/description/
 

@@ -1,4 +1,4 @@
-import { TreeNode } from "./binary-tree.js";
+import { TreeNode } from "./tree-node.js";
 
 function bfs(root: TreeNode | null) {
   if (!root) {

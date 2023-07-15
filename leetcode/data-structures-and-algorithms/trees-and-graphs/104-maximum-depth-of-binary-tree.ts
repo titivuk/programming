@@ -1,4 +1,4 @@
-import { TreeNode } from "./binary-tree.js";
+import { TreeNode } from "./tree-node.js";
 
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
