@@ -1,0 +1,2 @@
+* in-order left-first DFS on a BST returns visits the nodes in sorted order
+* if you do DFS and on every node you decide whether you go left OR right -> you don't need recursion. You can use while loop. For example `270-closest-binary-search-tree-value`
