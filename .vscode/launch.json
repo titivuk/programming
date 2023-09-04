@@ -5,11 +5,30 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "SeatManager",
+      "request": "launch",
+      "mainClass": "SeatManager",
+      "projectName": "programming-questions_e7f4812a"
+    },
+    {
+      "type": "java",
+      "name": "Solution",
+      "request": "launch",
+      "mainClass": "Solution",
+      "projectName": "programming-questions_e7f4812a"
+    },
+    {
       "name": "Current TS File",
       "type": "node",
       "request": "launch",
-      "runtimeArgs": ["--loader", "ts-node/esm"],
-      "args": ["${file}"]
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm"
+      ],
+      "args": [
+        "${file}"
+      ]
     }
   ]
 }
