@@ -3,7 +3,7 @@ import { deepStrictEqual } from "assert";
 /**
  * @description approach is the same but smarter than my 1st implementation
  */
-function sortedSquaresBetterSolution(nums: number[]): number[] {
+function sortedSquares(nums: number[]): number[] {
   const result: number[] = [];
 
   // left - start from smallest negative which actually has the biggest absolute value
@@ -26,10 +26,10 @@ function sortedSquaresBetterSolution(nums: number[]): number[] {
 }
 
 deepStrictEqual(
-  sortedSquaresBetterSolution([-4, -1, 0, 3, 10]),
+  sortedSquares([-4, -1, 0, 3, 10]),
   [0, 1, 9, 16, 100]
 );
 deepStrictEqual(
-  sortedSquaresBetterSolution([-7, -3, 2, 3, 11]),
+  sortedSquares([-7, -3, 2, 3, 11]),
   [4, 9, 9, 49, 121]
 );

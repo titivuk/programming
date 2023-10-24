@@ -31,6 +31,32 @@ function reverseOnlyLetters(s: string): string {
   return chars.join("");
 }
 
+function reverseOnlyLetters_V2(s: string): string {
+  let chars = s.split("");
+
+  let left = 0,
+    right = s.length - 1;
+
+  function isEnglishCharCode(code: number) {
+    return (65 <= code && code <= 90) || (97 <= code && code <= 122);
+  }
+
+  let tmp = "";
+  while (left < right) {
+    while (left < right && !isEnglishCharCode(s.charCodeAt(left))) left++;
+    while (left < right && !isEnglishCharCode(s.charCodeAt(right))) right--;
+
+    tmp = chars[left];
+    chars[left] = s[right];
+    chars[right] = tmp;
+
+    left++;
+    right--;
+  }
+
+  return chars.join("");
+}
+
 strictEqual(reverseOnlyLetters("ab-cd"), "dc-ba");
 strictEqual(reverseOnlyLetters("a-bC-dEf-ghIj"), "j-Ih-gfE-dCba");
 strictEqual(reverseOnlyLetters("Test1ng-Leet=code-Q!"), "Qedo1ct-eeLg=ntse-T!");

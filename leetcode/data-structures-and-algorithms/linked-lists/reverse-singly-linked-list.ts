@@ -7,14 +7,14 @@ import {
 
 function reverseList(head: SinglyListNode | null): SinglyListNode | null {
   let curr = head;
-  let prev = null;
+  let prev: SinglyListNode | null = null;
 
-  let nextNode: SinglyListNode | null;
+  let next: SinglyListNode | null = null;
   while (curr) {
-    nextNode = curr.next;
+    next = curr.next;
     curr.next = prev;
     prev = curr;
-    curr = nextNode;
+    curr = next;
   }
 
   return prev;
