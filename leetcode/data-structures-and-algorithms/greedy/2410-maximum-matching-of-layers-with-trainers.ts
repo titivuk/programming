@@ -19,5 +19,5 @@ function matchPlayersAndTrainers(
     }
   }
 
-  return answer;166
+  return answer;
 }

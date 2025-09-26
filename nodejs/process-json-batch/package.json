@@ -1,0 +1,24 @@
+{
+  "name": "process-json-batch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/jsonstream": "^0.8.33",
+    "@types/node": "^22.10.2",
+    "@types/stream-json": "^1.7.8",
+    "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "JSONStream": "^1.3.5",
+    "stream-json": "^1.9.1"
+  }
+}

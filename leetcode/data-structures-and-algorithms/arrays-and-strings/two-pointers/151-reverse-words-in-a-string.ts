@@ -37,5 +37,5 @@ function reverseWords(s: string): string {
   return answer.join("");
 }
 
-// reverseWords("  hello  world  ");
+reverseWords("  hello  world  ");
 reverseWords("the sky is blue");
