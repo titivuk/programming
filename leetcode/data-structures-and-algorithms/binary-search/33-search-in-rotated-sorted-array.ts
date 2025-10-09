@@ -57,9 +57,9 @@ function search_twoBS(nums: number[], target: number): number {
 
 function search_singleBS(nums: number[], target: number): number {
   let left = 0,
-    right = nums.length - 1,
-    mid = 0;
+    right = nums.length - 1;
 
+  let mid = 0;
   while (left <= right) {
     mid = Math.floor((left + right) / 2);
 
@@ -67,27 +67,27 @@ function search_singleBS(nums: number[], target: number): number {
       return mid;
     }
 
-    // left part is sorted -> nums[i - 1] < nums[i] where i = [1, mid]
+    // [left, mid] subarray is sorted
     if (nums[left] <= nums[mid]) {
-      // if target between left and mid
-      // go to the left part
+      // if target inside [left, mid] subarray
+      //  - move to the left part
+      // else
+      //  - move to the right part
       if (nums[left] <= target && target < nums[mid]) {
         right = mid - 1;
-      }
-      // else go to the right part
-      else {
+      } else {
         left = mid + 1;
       }
     }
-    // there is a subarray in the end and its every value < nums[left]
+    // [mid, right] subarray is sorted
     else {
-      // if target between mid and right
-      // go the right part
+      // if target inside [mid, right] subarray
+      //  - move to the right part
+      // else
+      //  - move to the left part
       if (nums[mid] < target && target <= nums[right]) {
         left = mid + 1;
-      }
-      // else go to the left part
-      else {
+      } else {
         right = mid - 1;
       }
     }

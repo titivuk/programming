@@ -7,7 +7,7 @@
      - If `arr[mid] = x`, then the element has been found, return
      - If `arr[mid] > x`, then halve the search space by doing `right = mid - 1`
      - If `arr[mid] < x`, then halve the search space by doing `left = mid + 1`
-3. If you get to this opoint without `arr[mid] = x`, then search was unsuccessful. The `left` pointer will be at the index where `x` would need to be inserted to maintain `arr` being sorted
+3. If you get to this point without `arr[mid] = x`, then search was unsuccessful. The `left` pointer will be at the index where `x` would need to be inserted to maintain `arr` being sorted
 
 ## On Solution Spaces
 
