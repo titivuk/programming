@@ -10,38 +10,27 @@ import {
 // Given the head of a linked list, remove the n-th node from the end of the list and return its head.
 
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-  let fast: ListNode | null = head,
-    slow: ListNode | null = head;
-
-  // move fast pointer on the n-th position
-  for (let i = 0; i < n; i++) {
-    fast = fast!.next;
-  }
-
-  // run 2 pointers
-  // fast - from n-th position
-  // slow - from head
-  // when fast = tail
-  // then slow  = n-th node form the end
-  let prev: ListNode | null = null;
-  while (fast) {
-    prev = slow;
-
-    slow = slow!.next;
+  let fast = head;
+  for (let i = 0; i < n - 1; i++) {
     fast = fast.next;
   }
 
-  // remove n-th node from the end
-  if (prev) {
-    prev.next = slow!.next;
-  }
-  // if no prev - n-th node from the end is head
-  else {
-    head = slow!.next;
+  let prev = null
+  let slow = head;
+  while (fast.next) {
+    fast = fast.next;
+
+    prev = slow;
+    slow = slow.next;
   }
 
+  if (prev == null) {
+    return slow.next;
+  }
+  prev.next = slow.next
+
   return head;
-}
+};
 
 deepStrictEqual(
   createArrayFromSinglyLinkedList(
