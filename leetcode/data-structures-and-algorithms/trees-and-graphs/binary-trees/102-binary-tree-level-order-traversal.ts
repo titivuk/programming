@@ -21,32 +21,24 @@ function levelOrder(root: TreeNode | null): number[][] {
     return [];
   }
 
-  const answer: number[][] = [];
+  let nodes: TreeNode[] = [root];
+  let nextLvlNodes: TreeNode[] = [];
+  const values: number[][] = [];
+  while (nodes.length > 0) {
+    const curLvlValues = [];
+    for (const n of nodes) {
+      curLvlValues.push(n.val);
 
-  let currLvlNodes: TreeNode[] = [root],
-    nextLvlNodes: TreeNode[] = [];
-
-  let i = 0;
-  while (currLvlNodes.length > 0) {
-    answer[i] = [];
-
-    for (const node of currLvlNodes) {
-      answer[i].push(node.val);
-
-      if (node.left) {
-        nextLvlNodes.push(node.left);
-      }
-
-      if (node.right) {
-        nextLvlNodes.push(node.right);
-      }
+      if (n.left) nextLvlNodes.push(n.left);
+      if (n.right) nextLvlNodes.push(n.right);
     }
 
-    currLvlNodes = nextLvlNodes;
-    nextLvlNodes = [];
+    values.push(curLvlValues);
 
-    i += 1;
+    nodes = nextLvlNodes;
+    nextLvlNodes = [];
   }
 
-  return answer;
-}
+  return values;
+};
+

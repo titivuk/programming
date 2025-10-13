@@ -5,7 +5,7 @@ import { TreeNode } from "../tree-node.js";
 // Given the root node of a binary search tree and two integers low and high,
 // return the sum of values of all nodes with a value in the inclusive range [low, high].
 
-function getMinimumDifference(root: TreeNode | null): number {
+function getMinimumDifference_array(root: TreeNode | null): number {
   if (!root) {
     return 0;
   }
@@ -32,3 +32,28 @@ function getMinimumDifference(root: TreeNode | null): number {
 
   return answer;
 }
+
+function getMinimumDifference(root: TreeNode | null): number {
+  let min = Number.POSITIVE_INFINITY;
+  let prev: number;
+
+  // in-order left-first
+  function dfs(node: TreeNode | null) {
+    if (!node) {
+      return;
+    }
+
+    dfs(node.left);
+
+    if (typeof prev === 'number') {
+      min = Math.min(min, node.val - prev);
+    }
+    prev = node.val;
+
+    dfs(node.right);
+  }
+
+  dfs(root);
+
+  return min;
+};

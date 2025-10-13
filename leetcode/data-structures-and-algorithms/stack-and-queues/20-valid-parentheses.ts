@@ -26,7 +26,7 @@ function isValid(s: string): boolean {
         return false;
       }
 
-      let previousOpening = stack.pop() as keyof typeof dict;
+      let previousOpening = stack.pop() as keyof typeof dict;   
 
       if (s[i] !== dict[previousOpening]) {
         return false;

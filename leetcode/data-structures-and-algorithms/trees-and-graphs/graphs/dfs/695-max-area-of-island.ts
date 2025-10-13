@@ -5,61 +5,48 @@
 // Return the maximum area of an island in grid. If there is no island, return 0.
 
 // similar to 200
+const dirs = [
+  [-1, 0], // up
+  [0, 1], // right
+  [1, 0], // down
+  [0, -1], //  left
+];
+
 function maxAreaOfIsland(grid: number[][]): number {
-  let answer = 0;
-  let m = grid.length,
-    n = grid[0].length;
+  const m = grid.length;
+  const n = grid[0].length;
 
-  const visited: boolean[][] = [];
+  let maxArea = 0;
   for (let i = 0; i < m; i++) {
-    visited[i] = [];
-
     for (let j = 0; j < n; j++) {
-      visited[i].push(false);
-    }
-  }
-
-  function dfs(i: number, j: number) {
-    // mark visited island
-    visited[i][j] = true;
-
-    let answ = 1;
-
-    // check all cells that are islands and connected to the current island
-
-    // top
-    if (i > 0 && grid[i - 1][j] === 1 && visited[i - 1][j] === false) {
-      answ += dfs(i - 1, j);
-    }
-
-    // right
-    if (j < n - 1 && grid[i][j + 1] === 1 && visited[i][j + 1] === false) {
-      answ += dfs(i, j + 1);
-    }
-
-    // bottom
-    if (i < m - 1 && grid[i + 1][j] === 1 && visited[i + 1][j] === false) {
-      answ += dfs(i + 1, j);
-    }
-
-    // left
-    if (j > 0 && grid[i][j - 1] === 1 && visited[i][j - 1] === false) {
-      answ += dfs(i, j - 1);
-    }
-
-    return answ;
-  }
-
-  for (let i = 0; i < grid.length; i++) {
-    for (let j = 0; j < grid[i].length; j++) {
-      // if cell is island and not yet visited
-      // we found previous unseen island / group of connected islands
-      if (grid[i][j] === 1 && visited[i][j] === false) {
-        // and visit connected islands
-        answer = Math.max(answer, dfs(i, j));
+      if (grid[i][j] === 1) {
+        grid[i][j] = 0; // instead of separate "seen" matrix, just mark visited cells as water
+        maxArea = Math.max(maxArea, dfs(grid, i, j));
       }
     }
   }
 
-  return answer;
+  return maxArea;
+}
+
+function dfs(grid: number[][], i: number, j: number): number {
+  const m = grid.length;
+  const n = grid[0].length;
+
+  let area = 1;
+  for (const d of dirs) {
+    const nexti = i + d[0];
+    const nextj = j + d[1];
+
+    if (isValid(nexti, nextj, m, n) && grid[nexti][nextj] === 1) {
+      grid[nexti][nextj] = 0; // instead of separate "seen" matrix, just mark visited cells as water
+      area += dfs(grid, nexti, nextj);
+    }
+  }
+
+  return area;
+}
+
+function isValid(i: number, j: number, m: number, n: number): boolean {
+  return 0 <= i && i < m && 0 <= j && j < n;
 }

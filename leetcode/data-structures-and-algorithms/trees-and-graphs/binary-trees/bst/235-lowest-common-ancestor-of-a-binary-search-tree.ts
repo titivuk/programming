@@ -103,3 +103,24 @@ function lowestCommonAncestor(
   // just propagate it to the top and return as result
   return left || right;
 }
+
+// easier for me understand
+function lowestCommonAncestor_2025(root: TreeNode | null, p: TreeNode, q: TreeNode): TreeNode | null {
+  if (!root) {
+    return null;
+  }
+
+  let node: TreeNode | null = root;
+
+  while (node) {
+    if (p.val < node.val && q.val < node.val) {
+      node = node.left;
+    } else if (p.val > node.val && q.val > node.val) {
+      node = node.right
+    } else {
+      return node;
+    }
+  }
+
+  return null;
+};

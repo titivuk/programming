@@ -19,17 +19,21 @@ function isSymmetric(root: TreeNode | null): boolean {
     return false;
   }
 
-  function dfs(left: TreeNode | null, right: TreeNode | null): boolean {
-    if (!left || !right) {
-      return left === right;
-    }
+  return dfs(root.left, root.right);
+};
 
-    if (left.val !== right.val) {
-      return false;
-    }
-
-    return dfs(left.left, right.right) && dfs(left.right, right.left);
+function dfs(left: TreeNode | null, right: TreeNode | null): boolean {
+  if (!left && !right) {
+    return true;
   }
 
-  return dfs(root.left, root.right);
+  if (!left || !right) {
+    return false
+  }
+
+  if (left.val !== right.val) {
+    return false;
+  }
+
+  return dfs(left.left, right.right) && dfs(left.right, right.left);
 }
