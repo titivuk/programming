@@ -29,3 +29,5 @@ function merge(intervals: number[][]): number[][] {
 function isOverlap(i1: number[], i2: number[]): boolean {
   return i1[1] >= i2[0];
 }
+
+export {}
