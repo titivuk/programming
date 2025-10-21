@@ -14,7 +14,7 @@ function equalSubstring(s: string, t: string, maxCost: number): number {
 
   let left = 0;
   for (let right = 0; right < s.length; right++) {
-    // add right value to the cщst
+    // add right value to the cost
     cost += Math.abs(s.charCodeAt(right) - t.charCodeAt(right));
 
     // adjust cost to be <= maxCost by redmoving elements from the left if needed

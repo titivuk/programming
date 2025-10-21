@@ -28,8 +28,9 @@ function maxProfit_leetcode(prices: number[]): number {
     // 1 2 3 4 5  |  4 3 2  | 1 4
     //    incr        decr    incr
     // profit(a <= b <= c <= d) = d - a = (b - a) + (c - b) + (d - c)
-    // in case of decreasing sequence => profit is negative, so we can 0 in that cases
-    answer += Math.max(prices[i] - prices[i - 1], 0);
+    if (prices[i] > prices[i - 1]) {
+      answer += prices[i] - prices[i - 1];
+    }
   }
 
   return answer;

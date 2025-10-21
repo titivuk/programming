@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-nums-by-parity/description/
+// https://leetcode.com/problems/sort-array-by-parity/description/
 
 function sortArrayByParity(nums: number[]): number[] {
   // Easier version of https://leetcode.com/problems/sort-colors/

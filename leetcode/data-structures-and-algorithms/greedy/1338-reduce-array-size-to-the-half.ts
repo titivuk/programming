@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reduce-arr-size-to-the-half/description/
+// https://leetcode.com/problems/reduce-array-size-to-the-half/description/
 
 function minSetSize(arr: number[]): number {
   let n = arr.length;

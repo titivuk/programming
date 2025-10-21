@@ -96,7 +96,7 @@ function reverseBetweenLeetCodeApproach(
     right--;
   }
 
-  // now if there is node before sublsit - connect the sublist with that node (reversed sublist start from prev node)
+  // now if there is node before sublist - connect the sublist with that node (reversed sublist start from prev node)
   if (conn) {
     conn.next = prev;
   }
@@ -105,7 +105,7 @@ function reverseBetweenLeetCodeApproach(
     head = prev;
   }
 
-  // after we reversed sublist curr point to the first node after sublist
+  // after we reversed sublist curr points to the first node after sublist
   // so we connect tail of sublist to that node
   tail!.next = curr;
 

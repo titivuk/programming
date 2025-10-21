@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/two-sum-ii-input-numbers-is-sorted/?envType=list&envId=e9snhf4h
+// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 
 function twoSum_two_pointer(numbers: number[], target: number): number[] {
   let left = 0,

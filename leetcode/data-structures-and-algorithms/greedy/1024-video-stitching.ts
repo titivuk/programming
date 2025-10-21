@@ -11,7 +11,7 @@ function videoStitching(clips: number[][], time: number): number {
   });
 
   // if smallest startTime not equal to 0
-  // we cannot covert 0...1 second
+  // we cannot cover 0...1 second
   if (clips[clips.length - 1][0] !== 0) {
     return -1;
   }

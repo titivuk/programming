@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/destroying-asteroids/description/
+// https://leetcode.com/problems/partition-array-such-that-maximum-difference-is-k/description
 
 import { strictEqual } from "node:assert";
 

@@ -77,9 +77,9 @@ class MyStackSingleQueueLinkedList {
         // push every element starting from head to tail
         this.queueTail!.next = curr;
         this.queueTail = this.queueTail.next;
-        
+
         curr = curr.next!;
-        
+
         this.queueTail.next = null;
       }
 

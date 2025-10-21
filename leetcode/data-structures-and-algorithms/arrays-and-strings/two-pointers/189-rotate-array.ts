@@ -20,7 +20,7 @@ function rotate(nums: number[], k: number): void {
  */
 function rotate_smart_reverse(nums: number[], k: number): void {
   // if k === nums.length it means we will do whole round and the array remain the same
-  // so we remove redundrant rounds
+  // so we remove redundant rounds
   k = k % nums.length;
 
   function reverse(array: number[], start: number, end: number) {

@@ -6,7 +6,7 @@ function earliestFullBloom(plantTime: number[], growTime: number[]): number {
     flowers[i] = [plantTime[i], growTime[i]];
   }
 
-  // flowers should be planted in plantTime DESC order
+  // flowers should be planted in growTime DESC order
   flowers.sort((a, b) => b[1] - a[1]);
 
   let totalTime = 0,
